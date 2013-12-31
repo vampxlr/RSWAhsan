@@ -19,13 +19,13 @@
 define('DB_NAME', 'db4db1b4fcb60d4c0c98caa2a50040e8c5');
 
 /** MySQL database username */
-define('DB_USER', 'hncwsqghafiuwrju');
+define('DB_USER', 'qewgfdgwcneoqlce');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'pTTXY8Ddfjto5riLJoZmKBbAkVxTvLEhtPebwPitcbWHuavQdQnNXjnVRsLdHTQA');
+define('DB_PASSWORD', 'yQPMyZsjArredfSqtv5ifgB5AsHraLgqkALZdccU2SV5XkY8V2prD6fsnTkfrbjX');
 
 /** MySQL hostname */
-define('DB_HOST', '281ed575-4aeb-4070-b80a-a2a500299d1d.mysql.sequelizer.com');
+define('DB_HOST', '4db1b4fc-b60d-4c0c-98ca-a2a50040e8c5.mysql.sequelizer.com');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
