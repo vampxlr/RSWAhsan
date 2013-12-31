@@ -1,4 +1,5 @@
-﻿<?php
+<?php
+use System\Configuration;
 /**
  * The base configurations of the WordPress.
  *
@@ -16,23 +17,25 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'db4db1b4fcb60d4c0c98caa2a50040e8c5');
+
+parse_str(str_replace(';', '&', Configuration\ConfigurationManager::$AppSettings->get_Item("MYSQL_CONNECTION_STRING")));
+
+define('DB_NAME', $database);
 
 /** MySQL database username */
-define('DB_USER', 'qewgfdgwcneoqlce');
+define('DB_USER', $uid);
 
 /** MySQL database password */
-define('DB_PASSWORD', 'yQPMyZsjArredfSqtv5ifgB5AsHraLgqkALZdccU2SV5XkY8V2prD6fsnTkfrbjX');
+define('DB_PASSWORD', $pwd);
 
 /** MySQL hostname */
-define('DB_HOST', '4db1b4fc-b60d-4c0c-98ca-a2a50040e8c5.mysql.sequelizer.com');
+define('DB_HOST', $server);
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
 
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
-
 /**#@+
  * Authentication Unique Keys and Salts.
  *
@@ -42,14 +45,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'F[li8,`4t/8hk8q&Eg0lld)$>^`/>>4tHRP{mmv}$fa,/;k e*Il1;2*diB; r>_');
-define('SECURE_AUTH_KEY',  '/;k%a?i|^;r(rm_C&9Zx{x+xs hK4Poy^<P-:F}!nz[8hyHv!j)[8[AUt1TTb)Op');
-define('LOGGED_IN_KEY',    '?:vw}J~ w;Ql%/(:P^TMk4C]@Fo0?Lm5K)Kb!!2kB7OFd#414*SbB~so<,[Nex3A');
-define('NONCE_KEY',        '+_zjOO5tltgk)K,~O5}r)1VG]Kiw$RrwGf7X#)kwMM*Qc`vCr,d[kd~cmS)~((?{');
-define('AUTH_SALT',        '_6Q(+G}RTun(#W ]2<?xz h{XrP;TvxIK:7{wV`P?RCFod@$_?2{M[M Lz0Qr4-S');
-define('SECURE_AUTH_SALT', 'hR4x&Em4`(;*Q3:>b0fg-;NSS[).%:r+E;<_s.6d]PYifgIt4J0Fc1p}f(ZQp]`2');
-define('LOGGED_IN_SALT',   'Jb,LG)jh53?3@|N#zH&ilZ9D6dqZ)+$d&xzk&`}lShzTjdATC!zZ+4z3tBvKg9?>');
-define('NONCE_SALT',       'P|<0yl1$jO,hD|ts:Dgsodiw@e]ZFtP^.0$Vi|up{ZIxx=,_ZYd$Ra0#^b~$aC?J');
+define('AUTH_KEY',         'put your unique phrase here');
+define('SECURE_AUTH_KEY',  'put your unique phrase here');
+define('LOGGED_IN_KEY',    'put your unique phrase here');
+define('NONCE_KEY',        'put your unique phrase here');
+define('AUTH_SALT',        'put your unique phrase here');
+define('SECURE_AUTH_SALT', 'put your unique phrase here');
+define('LOGGED_IN_SALT',   'put your unique phrase here');
+define('NONCE_SALT',       'put your unique phrase here');
 
 /**#@-*/
 
@@ -71,6 +74,8 @@ $table_prefix  = 'wp_';
  */
 define('WPLANG', '');
 
+define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST']);
+define('WP_HOME',    'http://' . $_SERVER['HTTP_HOST']);
 /**
  * For developers: WordPress debugging mode.
  *
